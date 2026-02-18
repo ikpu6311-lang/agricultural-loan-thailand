@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .dashboard { max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px; }
+        h1 { text-align: center; }
+        .summary { margin-top: 20px; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <h1>Loan Dashboard</h1>
+        <label for="loanType">Select Loan Type:</label>
+        <select id="loanType" onchange="updateSummary()">
+            <option value="personal">Personal Loan</option>
+            <option value="home">Home Loan</option>
+            <option value="auto">Auto Loan</option>
+        </select>
+        <br><br>
+        <label for="loanAmount">Enter Amount:</label>
+        <input type="range" id="loanAmount" min="1000" max="100000" step="1000" value="50000" oninput="updateSummary()">
+        <span id="amountValue">$50000</span>
+        <br><br>
+        <div class="summary">
+            <h2>Summary</h2>
+            <p id="summaryText">Selected Loan Type: Personal Loan<br>Loan Amount: $50000</p>
+        </div>
+    </div>
+    <script>
+        const loanAmountInput = document.getElementById('loanAmount');
+        const amountValueSpan = document.getElementById('amountValue');
+        const summaryText = document.getElementById('summaryText');
+        const loanTypeSelect = document.getElementById('loanType');
+
+        function updateSummary() {
+            const amount = loanAmountInput.value;
+            const loanType = loanTypeSelect.options[loanTypeSelect.selectedIndex].text;
+            amountValueSpan.textContent = '$' + amount;
+            summaryText.innerHTML = `Selected Loan Type: ${loanType}<br>Loan Amount: $${amount}`;
+        }
+    </script>
+</body>
+</html>
