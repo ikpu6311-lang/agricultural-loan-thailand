@@ -1,0 +1,30 @@
+.landing-page {
+    background-color: #f9f9f9;
+    color: #333;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.landing-page h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.landing-page p {
+    line-height: 1.6;
+}
+
+.landing-page .cta {
+    background-color: #28a745;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.landing-page .cta:hover {
+    background-color: #218838;
+}
